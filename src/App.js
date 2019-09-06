@@ -7,6 +7,10 @@ function App() {
     <div className="navbar">
         <Navbar>
         </Navbar>
+
+        <div className="content">
+        </div>
+
     </div>
   );
 }

@@ -11,7 +11,6 @@
     display: flex;
     justify-items: center;
     margin-top: 10px;
-    border: 1px solid;
 }
 
 .row > div {
@@ -21,8 +20,16 @@
     border: 1px solid;
 }
 
+.content {
+    border: 1px solid;
+    width: 80%;
+    height: 400px;
+}
+
 .navbar {
   display: grid;
+    grid-column: auto;
+    grid-row: auto;
   justify-items: center;
 }
 
