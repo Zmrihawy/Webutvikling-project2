@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d24c0e4-b9df-4057-a3ff-2c6a1fae4411" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,9 @@
       <workItem from="1567527931801" duration="1562000" />
       <workItem from="1567531038364" duration="373000" />
       <workItem from="1567531507221" duration="64000" />
-      <workItem from="1567535043132" duration="428000" />
+      <workItem from="1567535043132" duration="1070000" />
+      <workItem from="1567623131639" duration="99000" />
+      <workItem from="1567623938383" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Updated gitignore file. Added the .idea-folder to the list.">
       <created>1567535331622</created>
@@ -60,7 +62,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567535331622</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated gitignore file. Added the .idea-folder to the list.">
+      <created>1567535529827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567535529827</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated gitignore file. Added the .idea-folder to the list.">
+      <created>1567535668511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567535668511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
