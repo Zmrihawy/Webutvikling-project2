@@ -1,0 +1,32 @@
+h3 {
+    margin: 2px;
+}
+
+.container {
+    display: grid;
+    padding: 5px;
+    grid-gap: 10px;
+    border: 1px solid;
+    margin: 0;
+}
+
+.row {
+    width: 80%;
+    display: flex;
+    justify-items: center;
+    margin-top: 10px;
+}
+
+.row > div {
+    background-color: #f1f1f1;
+    width: 300px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.navbar {
+    display: grid;
+    grid-column: auto;
+    grid-row: auto;
+    justify-items: center;
+}
