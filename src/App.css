@@ -1,3 +1,7 @@
+h3 {
+    margin: 2px;
+}
+
 .container {
     display: grid;
     padding: 5px;
@@ -27,12 +31,8 @@
 }
 
 .navbar {
-  display: grid;
+    display: grid;
     grid-column: auto;
     grid-row: auto;
-  justify-items: center;
-}
-
-.container > div > label {
-    font-size: 20px;
+    justify-items: center;
 }

@@ -4,7 +4,7 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            titles: ["Select Picture", "Select Sound", "Select Text"]
+            titles: ["Picture", "Sound", "Text"]
         }
     }
 
@@ -54,7 +54,7 @@ class Checkbox extends Component {
 
         return (
 
-            <label htmlFor={name}>
+            <label htmlFor={name} className="label-container">
                 <input type="checkbox" name={name}/>
                 {name}
             </label>
