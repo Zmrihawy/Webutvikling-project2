@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Checkbox from "./Checkbox";
+import Checkbox from "../buttons/Checkbox";
 
 class NavbarMedia extends Component {
     constructor(props) {
