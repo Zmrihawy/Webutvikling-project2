@@ -18,7 +18,7 @@ div > label {
     margin: 5px;
 }
 
-.navbar {
+._inner_navbar{
     padding: 0;
     margin: 0;
     display: grid;
