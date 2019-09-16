@@ -66,6 +66,7 @@ render() {
                     setText={this.setText} 
                     setSound={this.setSound} 
                     setFavourites={this.setFavourites}
+                    globalState={this.state}
                 />
             </div>
             <div className="Slideshow">
