@@ -8,21 +8,21 @@ class MainPage extends Component {
         super(props);
         this.state = {
             picture: {
-                color: false,
+                decoration: false,
                 art: false,
                 animation: false
             }, 
 
             sounds: {
-                example1: false,
-                example2: false,
-                example3: false,
+                romance: false,
+                deep: false,
+                wild: false
             },
 
-            text : {
-                type1: false,
-                type2: false,
-                type3: false,
+            text: {
+                boring: false,
+                funny: false,
+                random: false
             },
 
             others: {
@@ -45,15 +45,15 @@ class MainPage extends Component {
     }
     
     setText(New) {
-        this.setState({picture: {...this.state.text, ...New}})
+        this.setState({text: {...this.state.text, ...New}})
     }
 
     setSound(New) {
-        this.setState({picture: {...this.state.sounds, ...New}})
+        this.setState({sounds: {...this.state.sounds, ...New}})
     }
 
     setFavourites(New) {
-        this.setState({picture: {...this.state.others, ...New}})
+        this.setState({others: {...this.state.others, ...New}})
     }
 
 render() {
