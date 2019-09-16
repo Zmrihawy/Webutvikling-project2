@@ -32,6 +32,9 @@ class MainPage extends Component {
         };
 
         this.setPicture = this.setPicture.bind(this);
+        this.setText = this.setText.bind(this);
+        this.setSound = this.setSound.bind(this);
+        this.setFavourites = this.setFavourites.bind(this);
     }
 
 

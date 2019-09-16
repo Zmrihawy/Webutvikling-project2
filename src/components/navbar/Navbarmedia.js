@@ -11,7 +11,7 @@ class NavbarMedia extends Component {
             <div className="container">
 
                 <h3>{this.props.children}</h3>
-                {categories.map(( Item, index) => <Checkbox name={Item} key={index}/> )}
+                {categories.map(( Item, index) => <Checkbox name={Item} key={index} changeFunc={this.props.changeFunc}/> )}
 
             </div>
         )
