@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextDisplay = (props) => {
   return (
-  <div>
+  <div style={{textAlign: "center"}}>
     {props.text}
   </div>
 )}

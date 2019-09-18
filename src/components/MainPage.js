@@ -73,7 +73,7 @@ render() {
             <div className="Slideshow">
                 <Slideshow/>
             </div>
-            <div>
+            <div className="TextDisplay" style={{marginTop: "50px"}}>
               <TextDisplayContainer textState={this.state.text}/>
             </div>
         </div>
