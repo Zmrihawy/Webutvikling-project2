@@ -1,67 +1,56 @@
-import React from 'react'
-import { Slide } from 'react-slideshow-image'
-import img1 from '../../media/img/img1.jpg'
-import img2 from '../../media/img/img2.jpg'
-import img3 from '../../media/img/img3.jpg'
-import img4 from '../../media/img/img4.jpg'
+import React from 'react';
+
+import dec1 from '../../media/img/decoration/img1.jpg';
+import dec2 from '../../media/img/decoration/img2.jpg';
+import dec3 from '../../media/img/decoration/img3.jpg';
+import dec4 from '../../media/img/decoration/img4.jpg';
+
+import art1 from '../../media/img/art/p_1001165491.jpg';
+import art2 from '../../media/img/art/maxresdefault.jpg';
+import art3 from '../../media/img/art/maxresdefault (1).jpg';
+import art4 from '../../media/img/art/eleven_below_single.svg';
+
+import anim1 from '../../media/img/animation/giphy.gif';
+import anim2 from '../../media/img/animation/giphy (1).gif';
+import anim3 from '../../media/img/animation/safe_image.gif';
+import anim4 from '../../media/img/animation/tumblr_n0i6g8rABP1rrr1sso1_500.gif';
+
 import '../../stylesheets/Slide.css'
 
+const Slideshow = (props) => {
+  const { pictureState, combinationState } = props;
+  let imgArr = [];
 
-const proprietes = {
-    duration: 5000,
-    transitionDuration: 500,
-    infinite: true,
-    autoplay: false,
-    indicators: true,
-    arrows: true
-}
+  let str = "";
+  Object.keys(pictureState).forEach(key => {
+    if (pictureState[key]) {
+      str = key
+    }
+  })
 
-const text = ['Verdens beste bilde 1',
-              'Verdens beste bilde 2',
-              'Verdens beste bilde 3',
-              'Verdens beste bilde 4']
+  switch(str) {
+    case "decoration":
+      imgArr = [dec1, dec2, dec3, dec4];
+      break;
+    case "art":
+      imgArr = [art1, art2, art3, art4];
+      break;
+    case "animation":
+      imgArr = [anim1, anim2, anim3, anim4];
+      break;
+    default:
+      console.log("Critical error! Picture state not recognized")
+  }
 
-const Slideshow = () => {
+  console.log(props)
+
+  console.log("showing: " + imgArr[combinationState]);
+
     return (
         <div className="containerSlide">
-            <Slide {...proprietes}>
-                <div className="each-slide">
-                    <div>
-                        <img src={img1} alt="img1" />
-                    </div>
-                    <div className='each-text'>
-                         <h1>{text[0]}</h1>
-                    </div>
-                </div>
-                
-                <div className="each-slide">
-                    <div>
-                        <img src={img2} alt="img2" />
-                    </div>
-                    <div className='each-text'>
-                         <h1>{text[1]}</h1>
-                    </div>
-                </div>
-
-                <div className="each-slide">
-                    <div>
-                        <img src={img3} alt="img3" />
-                    </div>
-                    <div className='each-text'>
-                         <h1>{text[2]}</h1>
-                    </div>
-                </div>
-                <div className="each-slide">
-                    <div>
-                        <img src={img4} alt="img4" />
-                    </div>
-                    <div className='each-text'>
-                         <h1>{text[3]}</h1>
-                    </div>
-                </div>
-            </Slide>
+          <img src={imgArr[combinationState]} alt="img1" className="image" />
         </div>
     )
 }
 
-export default Slideshow;
+export default Slideshow
