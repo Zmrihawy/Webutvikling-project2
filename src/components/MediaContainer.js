@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Slideshow from './slideshow/Slide';
+import PictureDisplayContainer from './picture/PictureDisplayContainer';
 import TextDisplayContainer from './text/TextDisplayContainer';
 
 import '../stylesheets/mediacontainer.css'
@@ -76,7 +76,7 @@ class MediaContainer extends Component {
         <button onClick={this.handleLeftChange} className="leftButton"> Left </button>
         <button onClick={this.handleRightChange} className="rightButton"> Right </button>
         <div className="Slideshow">
-            <Slideshow pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
+            <PictureDisplayContainer pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
           <TextDisplayContainer textState={globalState.text} combinationState={text[currentIndex]}/>

@@ -17,7 +17,7 @@ import anim4 from '../../media/img/animation/tumblr_n0i6g8rABP1rrr1sso1_500.gif'
 
 import '../../stylesheets/Slide.css'
 
-const Slideshow = (props) => {
+const PictureDisplayContainer = (props) => {
   const { pictureState, combinationState } = props;
   let imgArr = [];
 
@@ -42,10 +42,6 @@ const Slideshow = (props) => {
       console.log("Critical error! Picture state not recognized")
   }
 
-  console.log(props)
-
-  console.log("showing: " + imgArr[combinationState]);
-
     return (
         <div className="containerSlide">
           <img src={imgArr[combinationState]} alt="img1" className="image" />
@@ -53,4 +49,4 @@ const Slideshow = (props) => {
     )
 }
 
-export default Slideshow
+export default PictureDisplayContainer;
