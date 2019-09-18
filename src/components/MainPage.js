@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 
 import Navbar from './navbar/Navbar';
-import Slideshow from './slideshow/Slide';
-import TextDisplayContainer from './text/TextDisplayContainer';
+import MediaContainer from './MediaContainer';
 
 class MainPage extends Component {
     constructor(props) {
@@ -70,15 +69,10 @@ render() {
                     globalState={this.state}
                 />
             </div>
-            <div className="Slideshow">
-                <Slideshow/>
-            </div>
-            <div className="TextDisplay" style={{marginTop: "50px"}}>
-              <TextDisplayContainer textState={this.state.text}/>
-            </div>
+            <MediaContainer globalState={this.state}/>
         </div>
     )
-}
+  }
 }
 
 

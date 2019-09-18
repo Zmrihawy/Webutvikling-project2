@@ -3,7 +3,6 @@ import React from "react";
 
 
 function Navbar(props) {
-    console.log(props)
     return (
         <div className="_inner_navbar">
             <NavbarMedia categories={["decoration", "art", "animation"]} changeFunc={props.setPicture} ownState={props.globalState.picture}>Picture</NavbarMedia>
