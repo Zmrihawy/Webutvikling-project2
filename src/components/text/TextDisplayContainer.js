@@ -12,10 +12,6 @@ class TextDisplayContainer extends Component {
     }
   }
 
-  getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
   componentDidMount() {
     const { textState } = this.props;  
     let keys = Object.keys(textState).filter(key => (
@@ -28,8 +24,8 @@ class TextDisplayContainer extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { textState } = this.props;  
-    if (prevProps.textState !== textState) {
+    const { textState, combinationState } = this.props;  
+    if (prevProps.textState !== textState || prevProps.combinationState !== combinationState) {
       let keys = Object.keys(textState).filter(key => (
         textState[key]));
       if (keys.length == 1 && keys[0] == "random") {
@@ -41,7 +37,7 @@ class TextDisplayContainer extends Component {
   }
 
   render() {
-    const { textState } = this.props;  
+    const { textState, combinationState } = this.props;  
     const { randomText } = this.state;
     let text = "";
     let keys = Object.keys(textState).filter(key => (
@@ -50,11 +46,11 @@ class TextDisplayContainer extends Component {
       console.log("Critical error! Active text is more than one. This should never happen.")
     }
 
-    if (keys.length != 0) {
+    if (keys.length != 0 && combinationState != null) {
       if (keys[0] == "random") {
         text = randomText; 
       } else {
-        text = texts[keys[0]][this.getRandomInt(4)];
+        text = texts[keys[0]][combinationState];
       }
     }
 

@@ -1,0 +1,40 @@
+
+.mediacontainer-root{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.leftButton {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    height: 50px;
+    width: 50px;
+}
+
+.rightButton {
+    grid-column-start: 11;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    height: 50px;
+    width: 50px;
+}
+
+.Slideshow {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+    grid-row-start: 1;
+    width: 100%;
+    height: 100%;
+}
+.TextDisplay{
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    grid-row-start: 2;
+}
+
+
+
