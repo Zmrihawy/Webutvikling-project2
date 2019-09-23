@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 class Checkbox extends Component {
     constructor(props) {
@@ -8,26 +8,28 @@ class Checkbox extends Component {
 
     handleChange(e) {
 
-        let categoryObjs = {}
+        let categoryObjs = {};
         Object.keys(this.props.ownState).forEach(key => {
-            categoryObjs[key] = false })
+            categoryObjs[key] = false
+        });
 
 
-       this.props.changeFunc({...categoryObjs, ...{[this.props.name]: e.target.checked}});
+        this.props.changeFunc({...categoryObjs, ...{[this.props.name]: e.target.checked}});
 
     }
-    // disable}{
+
     render() {
 
-        const { name, ownState } = this.props;
+        const {name, ownState} = this.props;
 
         return (
 
-            <label htmlFor={name} className="label-container">
-                <input type="checkbox" name={name} checked={ownState[name]} onChange={this.handleChange}
-                />
-                {name}
-            </label>
+            <div className='checkbox'>
+                <input type="checkbox" id={name}
+                       checked={ownState[name]}
+                       onChange={this.handleChange}/>
+                <label htmlFor={name} className="label-container">{name}</label>
+            </div>
 
         )
     }

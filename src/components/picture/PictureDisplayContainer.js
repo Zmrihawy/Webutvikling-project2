@@ -1,19 +1,20 @@
 import React from 'react';
 
-import dec1 from '../../media/img/decoration/img1.jpg';
-import dec2 from '../../media/img/decoration/img2.jpg';
-import dec3 from '../../media/img/decoration/img3.jpg';
-import dec4 from '../../media/img/decoration/img4.jpg';
+import dec1 from '../../media/img/cubes/cubes_1.svg';
+import dec2 from '../../media/img/cubes/cubes_2.svg';
+import dec3 from '../../media/img/cubes/cubes_3.svg';
+import dec4 from '../../media/img/cubes/cubes_4.svg';
 
-import art1 from '../../media/img/art/p_1001165491.jpg';
-import art2 from '../../media/img/art/maxresdefault.jpg';
-import art3 from '../../media/img/art/maxresdefault (1).jpg';
-import art4 from '../../media/img/art/eleven_below_single.svg';
+import art1 from '../../media/img/shapes/shapes_1.svg';
+import art2 from '../../media/img/shapes/shapes_2.svg';
+import art3 from '../../media/img/shapes/shapes_3.svg';
+import art4 from '../../media/img/shapes/shapes_4.svg';
 
-import anim1 from '../../media/img/animation/giphy.gif';
-import anim2 from '../../media/img/animation/giphy (1).gif';
-import anim3 from '../../media/img/animation/safe_image.gif';
-import anim4 from '../../media/img/animation/tumblr_n0i6g8rABP1rrr1sso1_500.gif';
+import anim1 from '../../media/img/spirals/spiral_cat_1.svg';
+import anim2 from '../../media/img/spirals/spiral_cat_2.svg';
+import anim3 from '../../media/img/spirals/spiral_cat_3.svg';
+import anim4 from '../../media/img/spirals/spiral_cat_4.svg';
+
 
 import '../../stylesheets/Slide.css'
 
@@ -29,13 +30,13 @@ const PictureDisplayContainer = (props) => {
   })
 
   switch(str) {
-    case "decoration":
+    case "cubes":
       imgArr = [dec1, dec2, dec3, dec4];
       break;
-    case "art":
+    case "shapes":
       imgArr = [art1, art2, art3, art4];
       break;
-    case "animation":
+    case "spirals":
       imgArr = [anim1, anim2, anim3, anim4];
       break;
     default:
