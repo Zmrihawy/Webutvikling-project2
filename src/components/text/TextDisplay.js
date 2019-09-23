@@ -5,6 +5,6 @@ const TextDisplay = (props) => {
   <div style={{textAlign: "center"}}>
     {props.text}
   </div>
-)}
+)};
 
 export default TextDisplay;

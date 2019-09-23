@@ -8,9 +8,9 @@ class MainPage extends Component {
         super(props);
         this.state = {
             picture: {
-                decoration: false,
-                art: false,
-                animation: false
+                cubes: false,
+                shapes: false,
+                spirals: false
             }, 
 
             sounds: {
@@ -26,7 +26,7 @@ class MainPage extends Component {
             },
 
             others: {
-                favourites: false,
+                make_favourite: false,
                 toggleFavourites: false
             }
         };

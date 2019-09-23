@@ -13,7 +13,7 @@ class MediaContainer extends Component {
       text: this.calculateCombinations(4, 4),
       sound: this.calculateCombinations(4, 4),
       currentIndex: 0
-    }
+    };
     this.handleLeftChange = this.handleLeftChange.bind(this);
     this.handleRightChange = this.handleRightChange.bind(this);
   }
@@ -30,8 +30,8 @@ class MediaContainer extends Component {
       console.log("Error! numToChooseFrom larger than numToChoose. Should never happen")
     }
     // Create array of numbers from 0 to numToChooseFrom
-    const arr = Array.from(Array(numToChooseFrom).keys())
-    const res = []
+    const arr = Array.from(Array(numToChooseFrom).keys());
+    const res = [];
     // move random element from arr to res, numToChoose times
     for (let i = 0; i < numToChoose; i++) {
       res.push(arr.splice(this.getRandomInt(arr.length), 1)[0])
@@ -73,8 +73,8 @@ class MediaContainer extends Component {
     const { picture, text, sound, currentIndex } = this.state;
     return(
       <div className="mediacontainer-root"> 
-        <button onClick={this.handleLeftChange} className="leftButton"> Left </button>
-        <button onClick={this.handleRightChange} className="rightButton"> Right </button>
+        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
+        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
         <div className="Slideshow">
             <PictureDisplayContainer pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
         </div>

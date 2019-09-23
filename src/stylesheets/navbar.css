@@ -1,5 +1,29 @@
 h3 {
     margin: 5px;
+    font-family: 'custom_font1', sans-serif;
+}
+
+/*  ======================================================
+    Navbar
+    ====================================================== */
+
+.container {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    font-family: 'custom_font2', sans-serif;
+    background: #7FDBFF;
+}
+
+._inner_navbar {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-gap: 0;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    width: 100%;
 }
 
 div > label {
@@ -8,24 +32,83 @@ div > label {
     flex-wrap: nowrap;
 }
 
-.container {
-    padding: 5px;
-    margin: 5px;
+
+@media only screen and (max-width: 800px) {
+    ._inner_navbar {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-auto-rows: auto auto;
+    }
 }
+
+/*  ======================================================
+    Checkbox
+    ====================================================== */
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkbox label::before {
+    content: "";
+    top: 3px;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border: solid 1px;
+}
+
+.checkbox label::after {
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+    top: 7px;
+    left: 4px;
+}
+
+.checkbox label {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+}
+
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+
+/*  ======================================================
+    Favourites Star
+    ====================================================== */
 
 .fa-star {
     font-size: 20px;
     margin: 5px;
 }
 
-._inner_navbar{
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-gap: 0;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 5px;
+
+/*  ======================================================
+    Custom Fonts
+    ====================================================== */
+
+@font-face {
+    font-family: custom_font1;
+    src: url("../fonts/CODE Bold.otf");
+}
+
+@font-face {
+    font-family: custom_font2;
+    src: url("../fonts/Monaco.woff");
 }
