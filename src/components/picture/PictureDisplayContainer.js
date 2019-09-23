@@ -45,7 +45,7 @@ const PictureDisplayContainer = (props) => {
 
     return (
         <div className="containerSlide">
-          <img src={imgArr[combinationState]} alt="img1" className="image" />
+          <img src={imgArr[combinationState]} alt="Select a category." className="image" />
         </div>
     )
 }

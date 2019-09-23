@@ -7,6 +7,10 @@ h3 {
     Navbar
     ====================================================== */
 
+.text {
+    font-family: custom_font2, sans-serif;
+}
+
 .container {
     padding: 5px;
     margin: 5px;
