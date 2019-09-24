@@ -58,10 +58,7 @@ class Favourites extends Component{
         }
       });
       setFavourites({ chosenFavorite: chosenComb })
-
-      }
-      
-
+    }
       
 
     render() {
@@ -85,7 +82,7 @@ class Favourites extends Component{
                 </label>
               </form>
               <div className="dropdown">
-                <button className="dropbtn">Dropdown</button>
+                <button className="dropbtn">Favorites</button>
                 <div className="dropdown-content">
                   <a href="#" onClick={() => this.handleChooseFavorite("none")}>None</a>
                   {mappedCombs}

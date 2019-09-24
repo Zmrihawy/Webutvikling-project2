@@ -7,30 +7,22 @@ class Checkbox extends Component {
     }
 
     handleChange(e) {
-
         let categoryObjs = {};
         Object.keys(this.props.ownState).forEach(key => {
             categoryObjs[key] = false
         });
-
-
         this.props.changeFunc({...categoryObjs, ...{[this.props.name]: e.target.checked}});
-
     }
 
     render() {
-
         const {name, ownState} = this.props;
-
         return (
-
             <div className='checkbox'>
                 <input type="checkbox" id={name}
                        checked={ownState[name]}
                        onChange={this.handleChange}/>
                 <label htmlFor={name} className="label-container">{name}</label>
             </div>
-
         )
     }
 
