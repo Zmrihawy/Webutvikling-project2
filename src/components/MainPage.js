@@ -28,7 +28,8 @@ class MainPage extends Component {
             others: {
                 make_favourite: false,
                 toggleFavourites: false,
-                currentFavourites: []
+                currentFavourites: [],
+                chosenFavorite: false
             },
 
             combinations: {
@@ -69,7 +70,6 @@ class MainPage extends Component {
     }
 
 render() {
-    console.log(this.state.combinations);
     
     return (
         <div className="MainPage">

@@ -10,7 +10,7 @@ function Navbar(props) {
             <NavbarMedia categories={["romance", "deep", "wild"]} changeFunc={props.setSound} ownState={props.globalState.sounds}>Sounds</NavbarMedia>
             <NavbarMedia categories={["boring", "funny", "random"]} changeFunc={props.setText} ownState={props.globalState.text}>Text</NavbarMedia>
             <div className="container">
-                <Favourites setFavourites={props.setFavourites} ownState={props.globalState.others}>FAVOURITES</Favourites>
+                <Favourites setFavourites={props.setFavourites} ownState={props.globalState}>FAVOURITES</Favourites>
             </div>
         </div>
     )

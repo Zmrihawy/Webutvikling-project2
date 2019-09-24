@@ -49,9 +49,7 @@ class MediaContainer extends Component {
     var isEqual = true;
     Object.keys(obj1).forEach(globKey => {
       Object.keys(obj1[globKey]).forEach(key => {
-        console.log("is " + obj1[globKey][key] + " " + obj2[globKey][key] + " equal?");
         if(obj1[globKey][key] !== obj2[globKey][key]) {
-          console.log("Not equal!");
           isEqual = false;
         }
       })
@@ -61,9 +59,7 @@ class MediaContainer extends Component {
   isSimpleObjectEqual(obj1, obj2) {
     var isEqual = true;
     Object.keys(obj1).forEach(globKey => {
-      console.log("is " + obj1[globKey] + " " + obj2[globKey] + " equal?");
       if(obj1[globKey] !== obj2[globKey]) {
-        console.log("Not equal!");
         isEqual = false;
       }
     })
