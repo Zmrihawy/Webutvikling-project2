@@ -1,6 +1,6 @@
 import NavbarMedia from "./Navbarmedia";
 import React from "react";
-import Checkbox from "../buttons/Checkbox";
+import Favourites from '../buttons/Favourites';
 
 
 function Navbar(props) {
@@ -10,7 +10,7 @@ function Navbar(props) {
             <NavbarMedia categories={["romance", "deep", "wild"]} changeFunc={props.setSound} ownState={props.globalState.sounds}>Sounds</NavbarMedia>
             <NavbarMedia categories={["boring", "funny", "random"]} changeFunc={props.setText} ownState={props.globalState.text}>Text</NavbarMedia>
             <div className="container">
-                <h3>FAVOURITES</h3>
+                <Favourites setFavourites={props.setFavourites} ownState={props.globalState.others}>FAVOURITES</Favourites>
             </div>
         </div>
     )

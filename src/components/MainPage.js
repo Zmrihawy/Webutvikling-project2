@@ -27,7 +27,14 @@ class MainPage extends Component {
 
             others: {
                 make_favourite: false,
-                toggleFavourites: false
+                toggleFavourites: false,
+                currentFavourites: []
+            },
+
+            combinations: {
+                picture: [0, 1, 2, 3],
+                sounds: [0, 1, 2, 3],
+                text: [0, 1, 2, 3]
             }
         };
 
@@ -35,6 +42,7 @@ class MainPage extends Component {
         this.setText = this.setText.bind(this);
         this.setSound = this.setSound.bind(this);
         this.setFavourites = this.setFavourites.bind(this);
+        this.setCombinations = this.setCombinations.bind(this);
     }
 
 
@@ -56,7 +64,12 @@ class MainPage extends Component {
         this.setState({others: {...this.state.others, ...New}})
     }
 
+    setCombinations(New) {
+        this.setState({combinations: {...this.state.combinations, ...New}})
+    }
+
 render() {
+    console.log(this.state.combinations);
     
     return (
         <div className="MainPage">
@@ -69,7 +82,7 @@ render() {
                     globalState={this.state}
                 />
             </div>
-            <MediaContainer globalState={this.state}/>
+            <MediaContainer globalState={this.state} setCombinations={this.setCombinations}/>
         </div>
     )
   }
