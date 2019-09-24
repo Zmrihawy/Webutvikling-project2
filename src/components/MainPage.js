@@ -60,7 +60,7 @@ render() {
     return (
         <div className="MainPage">
             <div className="heading">
-                <h1>Project title here</h1>
+                <h1>Project 2 - Group 30</h1>
             </div>
             <div className="Navbar">
                 <Navbar 
