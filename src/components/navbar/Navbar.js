@@ -1,7 +1,5 @@
 import NavbarMedia from "./Navbarmedia";
 import React from "react";
-import Checkbox from "../buttons/Checkbox";
-
 
 function Navbar(props) {
     return (

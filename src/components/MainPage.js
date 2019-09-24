@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import Navbar from './navbar/Navbar';
 import MediaContainer from './MediaContainer';
 
@@ -60,6 +59,9 @@ render() {
     
     return (
         <div className="MainPage">
+            <div className="heading">
+                <h1>Project title here</h1>
+            </div>
             <div className="Navbar">
                 <Navbar 
                     setPicture={this.setPicture} 

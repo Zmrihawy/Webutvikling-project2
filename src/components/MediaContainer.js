@@ -72,15 +72,15 @@ class MediaContainer extends Component {
     const { globalState } = this.props;
     const { picture, text, sound, currentIndex } = this.state;
     return(
-      <div className="mediacontainer-root"> 
-        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
-        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
+      <div className="mediacontainer-root">
         <div className="Slideshow">
             <PictureDisplayContainer pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
           <TextDisplayContainer textState={globalState.text} combinationState={text[currentIndex]}/>
         </div>
+        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
+        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
       </div>
     )
   }
