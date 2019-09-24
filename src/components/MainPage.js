@@ -29,7 +29,7 @@ class MainPage extends Component {
                 make_favourite: false,
                 toggleFavourites: false,
                 currentFavourites: [],
-                chosenFavorite: false
+                chosenFavorite: null
             },
 
             combinations: {

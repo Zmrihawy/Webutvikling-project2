@@ -70,7 +70,7 @@ class Favourites extends Component{
         let mappedCombs = <div>no favorites saved yet</div>
         
         if (currCombs !== null) {
-          mappedCombs = currCombs.map((x, i) => (
+          mappedCombs = currCombs.map((x) => (
             <a href="#" key={x.favoriteName} onClick={() => this.handleChooseFavorite(x.favoriteName)}>{x.favoriteName}</a>
           ))
         }

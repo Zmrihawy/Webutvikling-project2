@@ -105,16 +105,34 @@ class MediaContainer extends Component {
 
   render() {
     const { globalState } = this.props;
-    const { picture, text, sound, currentIndex } = this.state;
+    let globalPicture = globalState.picture;
+    let globalSound = globalState.sound;
+    let globalText = globalState.text;
+    let combinations = globalState.combinations;
+    let chosenFavorite = globalState.others.chosenFavorite;
+    let { picture, text, sound, currentIndex} = this.state;
+
+    console.log(chosenFavorite);
+    if (chosenFavorite != null) {
+      console.log("chosenFavorite not null:");
+      console.log(chosenFavorite);
+      globalPicture = chosenFavorite.picture;
+      globalSound = chosenFavorite.sound;
+      globalText = chosenFavorite.text;
+      picture = combinations.picture;
+      sound = combinations.sound;
+      text = combinations.text;
+    }
+
     return(
       <div className="mediacontainer-root"> 
         <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
         <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
         <div className="Slideshow">
-            <PictureDisplayContainer pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
+            <PictureDisplayContainer pictureState={globalPicture} combinationState={picture[currentIndex]}/>
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
-          <TextDisplayContainer textState={globalState.text} combinationState={text[currentIndex]}/>
+          <TextDisplayContainer textState={globalText} combinationState={text[currentIndex]}/>
         </div>
       </div>
     )
