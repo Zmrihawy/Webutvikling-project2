@@ -27,7 +27,7 @@ const PictureDisplayContainer = (props) => {
     if (pictureState[key]) {
       str = key
     }
-  })
+  });
 
   switch(str) {
     case "cubes":
@@ -45,9 +45,9 @@ const PictureDisplayContainer = (props) => {
 
     return (
         <div className="containerSlide">
-          <img src={imgArr[combinationState]} alt="Select a category." className="image" />
+          <img src={imgArr[combinationState]} alt="Select a combination to start ..." className="image" />
         </div>
     )
-}
+};
 
 export default PictureDisplayContainer;
