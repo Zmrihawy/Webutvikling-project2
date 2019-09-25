@@ -30,6 +30,18 @@ h3 {
     width: 100%;
 }
 
+.favorites-outer-container {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    font-family: 'custom_font2', sans-serif;
+    background: #7FDBFF;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
 div > label {
     padding: 5px;
     display: flex;

@@ -112,16 +112,17 @@ class MediaContainer extends Component {
     let chosenFavorite = globalState.others.chosenFavorite;
     let { picture, text, sound, currentIndex} = this.state;
 
-    console.log(chosenFavorite);
+    // If user has chosen a favorite other than none, override random
+    // values and set to favorite values
     if (chosenFavorite != null) {
       console.log("chosenFavorite not null:");
       console.log(chosenFavorite);
       globalPicture = chosenFavorite.picture;
       globalSound = chosenFavorite.sound;
       globalText = chosenFavorite.text;
-      picture = combinations.picture;
-      sound = combinations.sound;
-      text = combinations.text;
+      picture = chosenFavorite.combinations.picture;
+      sound = chosenFavorite.combinations.sound;
+      text = chosenFavorite.combinations.text;
     }
 
     return(

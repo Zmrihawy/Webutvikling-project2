@@ -1,9 +1,19 @@
 .favorites-container {
+  width: 100%;
   display: flex;
 }
 
+.make-favorite-container {
+  flex-grow: 0.3;
+}
+
 .make-fav-btn {
-  flex-grow: 1;
+  /* position: relative; */
+  margin-top: 10px;
+}
+
+.make-fav-input {
+  margin-top: 10px;
 }
 
 
@@ -19,7 +29,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
-  flex-grow: 1;
+  flex-grow: 0.7;
 }
 
 /* Dropdown Content (Hidden by Default) */

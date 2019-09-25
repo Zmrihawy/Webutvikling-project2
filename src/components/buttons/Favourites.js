@@ -44,12 +44,10 @@ class Favourites extends Component{
 
     handleChooseFavorite(name) {
       const { setFavourites } = this.props;
-
       if (name === "none") {
         setFavourites({ chosenFavorite: null })
         return
       }
-
       let currCombs = JSON.parse(localStorage.getItem("combinations"));
       let chosenComb = null;
       currCombs.forEach(comb => {
@@ -63,30 +61,30 @@ class Favourites extends Component{
 
     render() {
         let currCombs = JSON.parse(localStorage.getItem("combinations"));
-        console.log(currCombs);
+        // Create jsx elements from favorites list
         let mappedCombs = <div>no favorites saved yet</div>
-        
         if (currCombs !== null) {
           mappedCombs = currCombs.map((x) => (
             <a href="#" key={x.favoriteName} onClick={() => this.handleChooseFavorite(x.favoriteName)}>{x.favoriteName}</a>
           ))
         }
-        
         return(
             <div className="favorites-container">
-              <button className="make-fav-btn" onClick={this.handleMakeFavoriteChange}>make_fav</button>
-              <form >
-                <label>
-                  Name:
-                  <input type="text" value={this.state.favoriteName} onChange={this.handleChange} />
-                </label>
-              </form>
               <div className="dropdown">
                 <button className="dropbtn">Favorites</button>
                 <div className="dropdown-content">
                   <a href="#" onClick={() => this.handleChooseFavorite("none")}>None</a>
                   {mappedCombs}
                 </div>
+              </div>
+              <div className="make-favorite-container">
+                <form className="make-fav-input">
+                  <label>
+                    New:
+                    <input type="text" value={this.state.favoriteName} onChange={this.handleChange} />
+                  </label>
+                </form>
+                <button className="make-fav-btn" onClick={this.handleMakeFavoriteChange}>save favorite</button>
               </div>
             </div>
         )
