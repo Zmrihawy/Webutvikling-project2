@@ -71,7 +71,7 @@ class Favourites extends Component{
         return(
             <div className="favorites-container">
               <div className="dropdown">
-                <button className="dropbtn">Favorites</button>
+                <button className="dropbtn">Favorites<i className="fas fa-caret-down" /></button>
                 <div className="dropdown-content">
                   <a href="#" onClick={() => this.handleChooseFavorite("none")}>None</a>
                   {mappedCombs}
@@ -80,11 +80,12 @@ class Favourites extends Component{
               <div className="make-favorite-container">
                 <form className="make-fav-input">
                   <label>
-                    New:
-                    <input type="text" value={this.state.favoriteName} onChange={this.handleChange} />
+                    <input type="text" value={this.state.favoriteName}
+                           onChange={this.handleChange}
+                           placeholder=" New Favourite Name ..." />
                   </label>
                 </form>
-                <button className="make-fav-btn" onClick={this.handleMakeFavoriteChange}>save favorite</button>
+                <button className="make-fav-btn" onClick={this.handleMakeFavoriteChange}>Save Favorite</button>
               </div>
             </div>
         )

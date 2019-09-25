@@ -1,7 +1,7 @@
 body {
     margin-top: 30px;
-    background: darkcyan;
-    color: white;
+    background: #7fdbff;
+    color: black;
     font-family: 'custom_font2', sans-serif;
 }
 
@@ -14,13 +14,17 @@ h3 {
     margin: 6px;
 }
 
+button {
+    font-family: 'custom_font2', sans-serif;
+}
+
 /*  ======================================================
     Navbar
     ====================================================== */
 .container {
     padding: 5px;
     margin: 5px;
-    border: 1px solid whitesmoke;
+    border: 1px solid;
     border-radius: 3px;
     font-family: 'custom_font2', sans-serif;
     background: transparent;
@@ -34,18 +38,6 @@ h3 {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto;
     width: 100%;
-}
-
-.favorites-outer-container {
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid;
-    border-radius: 3px;
-    font-family: 'custom_font2', sans-serif;
-    background: #7FDBFF;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
 }
 
 div > label {
@@ -110,19 +102,6 @@ div > label {
     content: "";
 }
 
-
-/*  ======================================================
-    Favourites Star
-    ====================================================== */
-
-.fa-star {
-    font-size: 20px;
-    margin: 5px;
-}
-
-.fas {
-    color: white;
-}
 /*  ======================================================
     Custom Fonts
     ====================================================== */
