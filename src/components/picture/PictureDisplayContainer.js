@@ -84,7 +84,7 @@ class PictureDisplayContainer extends Component {
               pictureSrc == null ? 
               <div> Loading </div> 
                 : 
-              <div dangerouslySetInnerHTML={{ __html: pictureSrc }} />
+              <div className="image" dangerouslySetInnerHTML={{ __html: pictureSrc }} />
             }
           </div>
       )
