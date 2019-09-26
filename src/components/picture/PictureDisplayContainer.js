@@ -38,7 +38,7 @@ class PictureDisplayContainer extends Component {
   componentDidUpdate(prevProps) {
     const { pictureState, combinationState } = this.props;
 
-    if(!this.isPictureStateEqual(pictureState, prevProps.pictureState) || combinationState != prevProps.combinationState) {
+    if(!this.isPictureStateEqual(pictureState, prevProps.pictureState) || combinationState !== prevProps.combinationState) {
       let imgArr = [];
       let str = "";
       Object.keys(pictureState).forEach(key => {
@@ -84,9 +84,7 @@ class PictureDisplayContainer extends Component {
               pictureSrc == null ? 
               <div> Loading </div> 
                 : 
-              <div className="image">
-                {pictureSrc}
-              </div>
+              <div dangerouslySetInnerHTML={{ __html: pictureSrc }} />
             }
           </div>
       )
