@@ -61,13 +61,9 @@ class PictureDisplayContainer extends Component {
           console.log("Critical error! Picture state not recognized")
       }
       console.log(imgArr[combinationState])
-      fetch(imgArr[combinationState],  { headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json' }
-      })
+      fetch(imgArr[combinationState])
         .then(res => {
-          console.log(res.json());
-          return res.json()
+          return res.blob();
         })
         .then(res => {
           console.log(res);
