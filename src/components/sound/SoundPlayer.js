@@ -33,13 +33,10 @@ const sounds = {
 class SoundPlayer extends Component {
   constructor(props) {
     super(props);
-    const { soundState, combinationState } = props;
+    const { soundState } = props;
     const filteredSoundState = Object.keys(soundState).filter(key => (soundState[key]));
     if (filteredSoundState.length > 1) {
       console.log("ERROR! Soundstate not recogniced, more than one");
-    }
-    if (filteredSoundState.length > 0) {
-      this.player.src = sounds[filteredSoundState[0]][combinationState];
     }
   }
 
