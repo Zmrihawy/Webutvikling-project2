@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import Navbar from './navbar/Navbar';
 import MediaContainer from './MediaContainer';
 
@@ -27,7 +26,15 @@ class MainPage extends Component {
 
             others: {
                 make_favourite: false,
-                toggleFavourites: false
+                toggleFavourites: false,
+                currentFavourites: [],
+                chosenFavorite: null
+            },
+
+            combinations: {
+                picture: [0, 1, 2, 3],
+                sounds: [0, 1, 2, 3],
+                text: [0, 1, 2, 3]
             }
         };
 
@@ -35,6 +42,7 @@ class MainPage extends Component {
         this.setText = this.setText.bind(this);
         this.setSound = this.setSound.bind(this);
         this.setFavourites = this.setFavourites.bind(this);
+        this.setCombinations = this.setCombinations.bind(this);
     }
 
 
@@ -56,10 +64,17 @@ class MainPage extends Component {
         this.setState({others: {...this.state.others, ...New}})
     }
 
+    setCombinations(New) {
+        this.setState({combinations: {...this.state.combinations, ...New}})
+    }
+
 render() {
     
     return (
         <div className="MainPage">
+            <div className="heading">
+                <h1>Project 2 - Group 30</h1>
+            </div>
             <div className="Navbar">
                 <Navbar 
                     setPicture={this.setPicture} 
@@ -69,7 +84,7 @@ render() {
                     globalState={this.state}
                 />
             </div>
-            <MediaContainer globalState={this.state}/>
+            <MediaContainer globalState={this.state} setCombinations={this.setCombinations}/>
         </div>
     )
   }

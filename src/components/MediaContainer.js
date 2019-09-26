@@ -14,6 +14,10 @@ class MediaContainer extends Component {
       sound: this.calculateCombinations(4, 4),
       currentIndex: 0
     };
+
+    const { setCombinations } = props;
+    setCombinations({picture: this.state.picture, sounds: this.state.sound, text: this.state.text });
+
     this.handleLeftChange = this.handleLeftChange.bind(this);
     this.handleRightChange = this.handleRightChange.bind(this);
   }
@@ -39,18 +43,49 @@ class MediaContainer extends Component {
     return res;
   }
 
+  // These functions are pretty dumb, they dont take into account if obj2 is larger
+  // But they should suffice for our purposes
+  isStateObjectEqual(obj1, obj2) {
+    var isEqual = true;
+    Object.keys(obj1).forEach(globKey => {
+      Object.keys(obj1[globKey]).forEach(key => {
+        if(obj1[globKey][key] !== obj2[globKey][key]) {
+          isEqual = false;
+        }
+      })
+    })
+    return isEqual;
+  }
+  isSimpleObjectEqual(obj1, obj2) {
+    var isEqual = true;
+    Object.keys(obj1).forEach(globKey => {
+      if(obj1[globKey] !== obj2[globKey]) {
+        isEqual = false;
+      }
+    })
+    return isEqual;
+  }
+    
+
   componentDidUpdate(prevProps) {
     const prevGlobalState = prevProps.globalState;
-    const { globalState } = this.props;
+    const { globalState, setCombinations } = this.props;
     const { picture, text, sound } = this.state;
 
+    const trimmedGlobalState = {picture: globalState.picture, sounds: globalState.sounds, text: globalState.text}
+    const trimmedPrevGlobalState = {picture: prevGlobalState.picture, sounds: prevGlobalState.sounds, text: prevGlobalState.text}
+
     // If props have changes, calc new value for just that combination state
-    if (globalState !== prevGlobalState) {
+    if (!this.isStateObjectEqual(trimmedGlobalState, trimmedPrevGlobalState)) {
+      const newPicComb = this.calculateCombinations(4, 4);
+      const newSoundComb = this.calculateCombinations(4, 4);
+      const newTextComb = this.calculateCombinations(4, 4);
       this.setState({ 
-        picture: globalState.picture !== prevGlobalState.picture ? this.calculateCombinations(4, 4) : picture,
-        text: globalState.text !== prevGlobalState.text ? this.calculateCombinations(4, 4) : text,
-        sound: globalState.sound !== prevGlobalState.sound ? this.calculateCombinations(4, 4) : sound
+        picture: !this.isSimpleObjectEqual(globalState.picture, prevGlobalState.picture) ? newPicComb : picture,
+        text: !this.isSimpleObjectEqual(globalState.text, prevGlobalState.text) ? newSoundComb : text,
+        sound: !this.isSimpleObjectEqual(globalState.sound !== prevGlobalState.sound) ? newTextComb : sound
       })
+      setCombinations({picture: newPicComb, sounds: newSoundComb, text: newTextComb});
     }
   }
 
@@ -70,17 +105,36 @@ class MediaContainer extends Component {
 
   render() {
     const { globalState } = this.props;
-    const { picture, text, sound, currentIndex } = this.state;
+    let globalPicture = globalState.picture;
+    let globalSound = globalState.sound;
+    let globalText = globalState.text;
+    let combinations = globalState.combinations;
+    let chosenFavorite = globalState.others.chosenFavorite;
+    let { picture, text, sound, currentIndex} = this.state;
+
+    // If user has chosen a favorite other than none, override random
+    // values and set to favorite values
+    if (chosenFavorite != null) {
+      console.log("chosenFavorite not null:");
+      console.log(chosenFavorite);
+      globalPicture = chosenFavorite.picture;
+      globalSound = chosenFavorite.sound;
+      globalText = chosenFavorite.text;
+      picture = chosenFavorite.combinations.picture;
+      sound = chosenFavorite.combinations.sound;
+      text = chosenFavorite.combinations.text;
+    }
+
     return(
-      <div className="mediacontainer-root"> 
-        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
-        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
+      <div className="mediacontainer-root">
         <div className="Slideshow">
-            <PictureDisplayContainer pictureState={globalState.picture} combinationState={picture[currentIndex]}/>
+            <PictureDisplayContainer pictureState={globalPicture} combinationState={picture[currentIndex]}/>
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
-          <TextDisplayContainer textState={globalState.text} combinationState={text[currentIndex]}/>
+          <TextDisplayContainer textState={globalText} combinationState={text[currentIndex]}/>
         </div>
+        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
+        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
       </div>
     )
   }

@@ -1,3 +1,10 @@
+.heading {
+    text-align: center;
+}
+
+/*  ======================================================
+    Slideshow
+    ====================================================== */
 
 .mediacontainer-root {
     margin: 20px 0 0 0;
@@ -8,7 +15,6 @@
     grid-template-rows: auto auto;
     justify-items: center;
     align-items: center;
-    border: solid 1px;
 }
 
 .leftButton {
@@ -41,15 +47,85 @@
     grid-column-start: 3;
     grid-column-end: span 8;
     grid-row-start: 1;
-    width: 100%;
-    height: 100%;
+    max-width: 700px;
+    max-height: 500px;
+    border: 1px solid;
+    border-radius: 4px;
 }
+
+.image {
+    height: 500px;
+    width: 700px;
+}
+
+/*  ======================================================
+    Text Display
+    ====================================================== */
+
 
 .TextDisplay {
     grid-column-start: 2;
     grid-column-end: span 10;
     grid-row-start: 2;
+    width: 70%;
+    margin-bottom: 50px;
 }
+
+
+
+/*  ======================================================
+    Media Calls
+    ====================================================== */
+
+@media only screen and (max-width: 2030px) {
+    .Slideshow, .image {
+        width: 600px;
+        height: 400px;
+    }
+
+    .mediacontainer-root {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .Slideshow, .image {
+        width: 600px;
+        height: 400px;
+    }
+
+    .mediacontainer-root {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .Slideshow, .image {
+        width: 500px;
+        height: 500px;
+    }
+
+    .mediacontainer-root {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .Slideshow, .image {
+        width: 240px;
+        height: 350px;
+    }
+
+    .mediacontainer-root {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+    }
+}
+
 
 
 

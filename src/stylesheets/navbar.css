@@ -1,23 +1,33 @@
-h3 {
+body {
+    margin-top: 30px;
+    background: #7fdbff;
+    color: black;
+    font-family: 'custom_font2', sans-serif;
+}
+
+h1, h3 {
     margin: 5px;
     font-family: 'custom_font1', sans-serif;
+}
+
+h3 {
+    margin: 6px;
+}
+
+button {
+    font-family: 'custom_font2', sans-serif;
 }
 
 /*  ======================================================
     Navbar
     ====================================================== */
-
-.text {
-    font-family: custom_font2, sans-serif;
-}
-
 .container {
     padding: 5px;
     margin: 5px;
     border: 1px solid;
     border-radius: 3px;
     font-family: 'custom_font2', sans-serif;
-    background: #7FDBFF;
+    background: transparent;
 }
 
 ._inner_navbar {
@@ -91,17 +101,6 @@ div > label {
 .checkbox input[type="checkbox"]:checked + label::after {
     content: "";
 }
-
-
-/*  ======================================================
-    Favourites Star
-    ====================================================== */
-
-.fa-star {
-    font-size: 20px;
-    margin: 5px;
-}
-
 
 /*  ======================================================
     Custom Fonts
