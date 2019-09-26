@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import PictureDisplayContainer from './picture/PictureDisplayContainer';
 import TextDisplayContainer from './text/TextDisplayContainer';
+import SoundPlayer from './sound/SoundPlayer';
 
 import '../stylesheets/mediacontainer.css'
 
@@ -106,7 +107,7 @@ class MediaContainer extends Component {
   render() {
     const { globalState } = this.props;
     let globalPicture = globalState.picture;
-    let globalSound = globalState.sound;
+    let globalSound = globalState.sounds;
     let globalText = globalState.text;
     let combinations = globalState.combinations;
     let chosenFavorite = globalState.others.chosenFavorite;
@@ -115,8 +116,6 @@ class MediaContainer extends Component {
     // If user has chosen a favorite other than none, override random
     // values and set to favorite values
     if (chosenFavorite != null) {
-      console.log("chosenFavorite not null:");
-      console.log(chosenFavorite);
       globalPicture = chosenFavorite.picture;
       globalSound = chosenFavorite.sound;
       globalText = chosenFavorite.text;
@@ -132,6 +131,9 @@ class MediaContainer extends Component {
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
           <TextDisplayContainer textState={globalText} combinationState={text[currentIndex]}/>
+        </div>
+        <div className="SoundPlayer" style={{marginTop: "50px"}}>
+          <SoundPlayer soundState={globalSound} combinationState={sound[currentIndex]}/>
         </div>
         <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
         <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
