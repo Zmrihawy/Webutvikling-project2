@@ -107,7 +107,7 @@ class MediaContainer extends Component {
   render() {
     const { globalState } = this.props;
     let globalPicture = globalState.picture;
-    let globalSound = globalState.sound;
+    let globalSound = globalState.sounds;
     let globalText = globalState.text;
     let combinations = globalState.combinations;
     let chosenFavorite = globalState.others.chosenFavorite;
@@ -116,8 +116,6 @@ class MediaContainer extends Component {
     // If user has chosen a favorite other than none, override random
     // values and set to favorite values
     if (chosenFavorite != null) {
-      console.log("chosenFavorite not null:");
-      console.log(chosenFavorite);
       globalPicture = chosenFavorite.picture;
       globalSound = chosenFavorite.sound;
       globalText = chosenFavorite.text;
