@@ -13,7 +13,7 @@ class Favourites extends Component{
 
     handleMakeFavoriteChange() {
       const { favoriteName } = this.state;
-      if (favoriteName == "") {
+      if (favoriteName === "") {
         alert("Please set a name for favorite");
         return;
       }

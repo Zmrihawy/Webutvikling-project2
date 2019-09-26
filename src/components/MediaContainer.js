@@ -109,7 +109,6 @@ class MediaContainer extends Component {
     let globalPicture = globalState.picture;
     let globalSound = globalState.sounds;
     let globalText = globalState.text;
-    let combinations = globalState.combinations;
     let chosenFavorite = globalState.others.chosenFavorite;
     let { picture, text, sound, currentIndex} = this.state;
 

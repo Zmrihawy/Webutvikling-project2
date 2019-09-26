@@ -16,7 +16,7 @@ class TextDisplayContainer extends Component {
     const { textState } = this.props;  
     let keys = Object.keys(textState).filter(key => (
       textState[key]));
-    if (keys.length == 1 && keys[0] == "random") {
+    if (keys.length === 1 && keys[0] === "random") {
       fetch("https://corporatebs-generator.sameerkumar.website/")
         .then(res => res.json())
         .then(res => (this.setState({randomText: res.phrase})))
@@ -28,7 +28,7 @@ class TextDisplayContainer extends Component {
     if (prevProps.textState !== textState || prevProps.combinationState !== combinationState) {
       let keys = Object.keys(textState).filter(key => (
         textState[key]));
-      if (keys.length == 1 && keys[0] == "random") {
+      if (keys.length === 1 && keys[0] === "random") {
         fetch("https://corporatebs-generator.sameerkumar.website/")
           .then(res => res.json())
           .then(res => (this.setState({randomText: res.phrase})))
@@ -46,8 +46,8 @@ class TextDisplayContainer extends Component {
       console.log("Critical error! Active text is more than one. This should never happen.")
     }
 
-    if (keys.length != 0 && combinationState != null) {
-      if (keys[0] == "random") {
+    if (keys.length !== 0 && combinationState !== null) {
+      if (keys[0] === "random") {
         text = randomText; 
       } else {
         text = texts[keys[0]][combinationState];
