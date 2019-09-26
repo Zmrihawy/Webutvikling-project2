@@ -126,6 +126,8 @@ class MediaContainer extends Component {
 
     return(
       <div className="mediacontainer-root">
+        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
+        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
         <div className="Slideshow">
             <PictureDisplayContainer pictureState={globalPicture} combinationState={picture[currentIndex]}/>
         </div>
@@ -135,8 +137,6 @@ class MediaContainer extends Component {
         <div className="SoundPlayer" style={{marginTop: "50px"}}>
           <SoundPlayer soundState={globalSound} combinationState={sound[currentIndex]}/>
         </div>
-        <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
-        <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
       </div>
     )
   }
