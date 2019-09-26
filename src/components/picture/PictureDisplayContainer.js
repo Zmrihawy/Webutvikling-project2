@@ -84,7 +84,9 @@ class PictureDisplayContainer extends Component {
               pictureSrc == null ? 
               <div> Loading </div> 
                 : 
-              <img src={pictureSrc} alt="Select a combination to start ..." className="image" />
+              <div className="image">
+                {pictureSrc}
+              </div>
             }
           </div>
       )
