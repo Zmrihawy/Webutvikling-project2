@@ -63,7 +63,7 @@ class PictureDisplayContainer extends Component {
       console.log(imgArr[combinationState])
       fetch(imgArr[combinationState])
         .then(res => {
-          return res.blob();
+          return res.text();
         })
         .then(res => {
           console.log(res);
