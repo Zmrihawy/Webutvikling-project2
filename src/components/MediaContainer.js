@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import PictureDisplayContainer from './picture/PictureDisplayContainer';
 import TextDisplayContainer from './text/TextDisplayContainer';
+import SoundPlayer from './sound/SoundPlayer';
 
 import '../stylesheets/mediacontainer.css'
 
@@ -132,6 +133,9 @@ class MediaContainer extends Component {
         </div>
         <div className="TextDisplay" style={{marginTop: "50px"}}>
           <TextDisplayContainer textState={globalText} combinationState={text[currentIndex]}/>
+        </div>
+        <div className="SoundPlayer" style={{marginTop: "50px"}}>
+          <SoundPlayer soundState={globalSound} combinationState={sound[currentIndex]}/>
         </div>
         <button onClick={this.handleLeftChange} className="leftButton"><i className="fas fa-angle-left" /></button>
         <button onClick={this.handleRightChange} className="rightButton"><i className="fas fa-angle-right" /></button>
