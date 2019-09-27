@@ -6,25 +6,42 @@
 }
 
 .make-fav-btn {
+
     margin-top: 10px;
-    border: black 2px solid;
-    height: 25px;
-    width: 120px;
-    border-radius: 3px;
-    color: white;
-    background: darkslategray;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ed3330;
+    padding: 13px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
     cursor: pointer;
+    position:relative;
+    left:50%;
+    bottom:65px;
+    width: 50%;
+
 }
 
 .make-fav-btn:hover {
     cursor: pointer;
-    background: #7fdbff;
-    color: black;
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
 
 }
 
 .make-fav-input {
     margin-top: 10px;
+    position:relative;
+    left:5%;
+
+
 }
 
 
@@ -36,6 +53,8 @@
     font-size: 16px;
     border: 1px solid black;
     border-radius: 3px;
+    position:relative;
+
 }
 
 .fa-caret-down {
@@ -48,6 +67,9 @@
     position: relative;
     display: inline-block;
     flex-grow: 0.7;
+    top: 100px;
+    left:5%;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -58,6 +80,7 @@
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+
 }
 
 /* Links inside the dropdown */
@@ -73,6 +96,9 @@ input[type="text"] {
     border: solid 1px black;
     height: 20px;
     width: 150px;
+    padding:10px;
+    position: relative;
+    bottom: 10px;
 
 }
 
