@@ -153,6 +153,8 @@ class MediaContainer extends Component {
     if (sessStorage !== null && sessStorage !== undefined && sessStorage.length > 0) {
       console.log("poping sess storage"); 
       const { state, combs } = sessStorage.pop();
+      console.log(state);
+      console.log(combs)
       this.setState({
         picture: state.picture,
         text : state.text,
