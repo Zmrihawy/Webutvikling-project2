@@ -71,6 +71,10 @@ we wanted to test, and jest pretty much handles the rest for us. A more sophisti
 should test the non-deterministic components of the app such as `MediaContainer`. In this case we would 
 have to mock the non-deterministic elements of the component, something we decided to not spend time on in this project.
 
+We tested the application on multiple devices. On large PC screens, the app behaves nicely with the navbar spreading its
+component out. On mobile, the navbar stacks its component in a grid-like fashion. The picture display also reacts 
+nicely to different screen sizes.
+
 
 ## Summary
 
