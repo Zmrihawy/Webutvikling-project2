@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import TextDisplay from './TextDisplay';
 
-const funnyURL = 'it2810-30.idi.ntnu.no/media/txt/funny.json'
-const boringURL = 'it2810-30.idi.ntnu.no/media/txt/boring.json'
+const funnyURL = '/media/txt/funny.json'
+const boringURL = '/media/txt/boring.json'
 const randomURL = 'https://corporatebs-generator.sameerkumar.website/'
 
 class TextDisplayContainer extends Component {
@@ -35,9 +35,19 @@ class TextDisplayContainer extends Component {
           URL = randomURL;
           break;
       }
+      console.log("fetching url");
+      console.log(URL);
       fetch(URL)
-        .then(res => res.json())
-        .then(res => (this.setState({randomText: res.phrase})))
+        .then(res => {
+          console.log(res)
+          return res.json()})
+        .then(res => {
+            if (keys[0] === "random") {
+              this.setState({randomText: res.phrase})
+            } else {
+              this.setState({text: res})
+            }
+        })
     }
   }
 
@@ -59,8 +69,12 @@ class TextDisplayContainer extends Component {
             URL = randomURL;
             break;
         }
+        console.log("fetching url");
+        console.log(URL);
         fetch(URL)
-          .then(res => res.json())
+          .then(res => {
+            console.log(res)
+            return res.json()})
           .then(res => {
             if (keys[0] === "random") {
               this.setState({randomText: res.phrase})
