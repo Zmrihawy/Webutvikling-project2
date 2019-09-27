@@ -147,10 +147,10 @@ class MediaContainer extends Component {
   
   handleGoToPrevCombChange() {
 
-    var combs = JSON.parse(sessionStorage.getItem("combinations"));
-    console.log(combs); 
-    if (combs !== null && combs !== undefined && combs.length >= 0) {
-      const { state, combs } = combs.pop();
+    let sessStorage = JSON.parse(sessionStorage.getItem("combinations"));
+    console.log(sessStorage); 
+    if (sessStorage !== null && sessStorage !== undefined && sessStorage.length >= 0) {
+      const { state, combs } = sessStorage.pop();
       this.setState({
         picture: state.picture,
         text : state.text,
@@ -161,7 +161,7 @@ class MediaContainer extends Component {
         text: combs.text,
         sounds: combs.sounds
       });
-      sessionStorage.setItem("combinations", JSON.stringify(combs));
+      sessionStorage.setItem("combinations", JSON.stringify(sessStorage));
     } else {
       alert("No previous combination entry found")
     }
