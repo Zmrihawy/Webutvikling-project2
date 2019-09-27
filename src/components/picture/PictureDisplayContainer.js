@@ -61,13 +61,19 @@ class PictureDisplayContainer extends Component {
         default:
           console.log("Critical error! Picture state not recognized");
       }
-      fetch(imgArr[combinationState])
-        .then(res => {
-          return res.text();
-        })
-        .then(res => {
-          this.setState({ pictureSrc: res });
-        });
+      if (imgArr[combinationState] !== null && imgArr[combinationState] !== undefined) {
+        this.setState({ pictureSrc: "Loading" });
+        fetch(imgArr[combinationState])
+          .then(res => {
+            return res.text();
+          })
+          .then(res => {
+            this.setState({ pictureSrc: res });
+          });
+      } else {
+        this.setState({ pictureSrc: "Please choose an image to display" });
+      }
+
     }
   }
 
@@ -77,7 +83,7 @@ class PictureDisplayContainer extends Component {
     return (
       <div className="containerSlide">
         {pictureSrc == null ? (
-          <div> Loading </div>
+          <div> Please choose an image to display </div>
         ) : (
           <div
             className="image"
