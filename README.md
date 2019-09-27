@@ -59,7 +59,7 @@ up all the localstorage, making it not so clean if we ever need more entries.
 We also attempted to implement a history feature where the user would be able to go back and look at previously
 visited combinations. While the session storage part did work, this feature still introduced a lot of weird bugs, 
 and would require a large restructure of our codebase to implement it to a standard we felt was sufficient. We 
-therefore decided to focus our energy elsewhere. The work on session storage may be viewed on the [sessionstorage branch](https://gitlab.stud.idi.ntnu.no/IT2810-H19/teams/team-30/prosjekt2/tree/sessionstorage). We realize that this was a requirement in the task, but since we did an 
+therefore decided to focus our energy elsewhere. The work on session storage may be viewed on the [sessionstorage branch](https://gitlab.stud.idi.ntnu.no/IT2810-H19/teams/team-30/prosjekt2/tree/sessionstorage), and is also documented in our issues, placed under the dropped list on our kanban board. We realize that this was a requirement in the task, but since we did an 
 honest attempt at implementing it and learned about the session storage API when working on the project, 
 we hope whoever is grading us will take this into consideration. 
 
