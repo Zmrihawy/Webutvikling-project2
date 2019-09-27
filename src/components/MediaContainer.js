@@ -12,14 +12,14 @@ class MediaContainer extends Component {
     this.state = {
       picture: this.calculateCombinations(4, 4),
       text: this.calculateCombinations(4, 4),
-      sound: this.calculateCombinations(4, 4),
+      sounds: this.calculateCombinations(4, 4),
       currentIndex: 0
     };
 
     const { setCombinations } = props;
     setCombinations({
       picture: this.state.picture,
-      sounds: this.state.sound,
+      sounds: this.state.sounds,
       text: this.state.text
     });
 
@@ -77,7 +77,7 @@ class MediaContainer extends Component {
   componentDidUpdate(prevProps) {
     const prevGlobalState = prevProps.globalState;
     const { globalState, setCombinations } = this.props;
-    const { picture, text, sound } = this.state;
+    const { picture, text, sounds } = this.state;
 
     const trimmedGlobalState = {
       picture: globalState.picture,
@@ -105,11 +105,11 @@ class MediaContainer extends Component {
         text: !this.isSimpleObjectEqual(globalState.text, prevGlobalState.text)
           ? newSoundComb
           : text,
-        sound: !this.isSimpleObjectEqual(
-          globalState.sound !== prevGlobalState.sound
+        sounds: !this.isSimpleObjectEqual(
+          globalState.sounds !== prevGlobalState.sounds
         )
           ? newTextComb
-          : sound
+          : sounds
       });
       setCombinations({
         picture: newPicComb,
@@ -154,7 +154,7 @@ class MediaContainer extends Component {
       this.setState({
         picture: state.picture,
         text : state.text,
-        sound : state.sound
+        sounds : state.sounds
       });
       this.setCombinations({
         picture: combs.picture,
@@ -174,7 +174,7 @@ class MediaContainer extends Component {
     let globalSound = globalState.sounds;
     let globalText = globalState.text;
     let chosenFavorite = globalState.others.chosenFavorite;
-    let { picture, text, sound, currentIndex } = this.state;
+    let { picture, text, sounds, currentIndex } = this.state;
 
     // If user has chosen a favorite other than none, override random
     // values and set to favorite values
@@ -183,7 +183,7 @@ class MediaContainer extends Component {
       globalSound = chosenFavorite.sounds;
       globalText = chosenFavorite.text;
       picture = chosenFavorite.combinations.picture;
-      sound = chosenFavorite.combinations.sounds;
+      sounds = chosenFavorite.combinations.sounds;
       text = chosenFavorite.combinations.text;
     }
 
@@ -210,7 +210,7 @@ class MediaContainer extends Component {
         <div className="SoundPlayer" style={{ marginTop: "50px" }}>
           <SoundPlayer
             soundState={globalSound}
-            combinationState={sound[currentIndex]}
+            combinationState={sounds[currentIndex]}
           />
         </div>
         <button className="prevCombButton" onClick={this.handleGoToPrevCombChange}> Go to prev combination </button>
