@@ -2,6 +2,10 @@ import NavbarMedia from "./Navbarmedia";
 import React from "react";
 import Favourites from "../buttons/Favourites";
 
+
+/**
+ * Functional component for navbar
+ */
 function Navbar(props) {
   return (
     <div className="_inner_navbar">

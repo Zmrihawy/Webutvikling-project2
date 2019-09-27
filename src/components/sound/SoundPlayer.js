@@ -23,6 +23,10 @@ const sounds = {
   wild: [wild1, wild2, wild3, wild4]
 };
 
+/**
+ * Component for playing sound. Much simpler than the other art display components
+ * since it is not required to use ajax
+ */
 class SoundPlayer extends Component {
   constructor(props) {
     super(props);

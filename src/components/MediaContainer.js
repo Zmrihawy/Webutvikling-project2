@@ -6,6 +6,13 @@ import SoundPlayer from "./sound/SoundPlayer";
 
 import "../stylesheets/mediacontainer.css";
 
+
+/**
+ * Component for managing the different art displays.
+ * This component calculates and manages the combinaions that should be viewed.
+ * It does NOT manage the categories, that is handled in the navbar and passed 
+ * as prop to this component
+ */
 class MediaContainer extends Component {
   constructor(props) {
     super(props);
@@ -50,8 +57,11 @@ class MediaContainer extends Component {
     return res;
   }
 
-  // These functions are pretty dumb, they dont take into account if obj2 is larger
-  // But they should suffice for our purposes
+  /**
+   * Helper functions for determining object equality
+   * These functions are pretty dumb, they dont take into account if obj2 is larger,
+   * but they should suffice for use in just this component.
+   */
   isStateObjectEqual(obj1, obj2) {
     var isEqual = true;
     Object.keys(obj1).forEach(globKey => {
@@ -73,6 +83,11 @@ class MediaContainer extends Component {
     return isEqual;
   }
 
+
+  /**
+   * Lifecycle method that should update individual parts of the 
+   * state, only if associated prop has changed
+   */
   componentDidUpdate(prevProps) {
     const prevGlobalState = prevProps.globalState;
     const { globalState, setCombinations } = this.props;
