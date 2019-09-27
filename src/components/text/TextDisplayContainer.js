@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 
 import TextDisplay from './TextDisplay';
 
-const funnyURL = '/media/txt/funny.json'
-const boringURL = '/media/txt/boring.json'
+const funnyURL = 'media/txt/funny.json'
+const boringURL = 'media/txt/boring.json'
 const randomURL = 'https://corporatebs-generator.sameerkumar.website/'
 
 class TextDisplayContainer extends Component {
@@ -79,7 +79,7 @@ class TextDisplayContainer extends Component {
             if (keys[0] === "random") {
               this.setState({randomText: res.phrase})
             } else {
-              this.setState({text: res.phrase})
+              this.setState({text: res})
             }
           }) 
       }
@@ -96,11 +96,14 @@ class TextDisplayContainer extends Component {
       console.log("Critical error! Active text is more than one. This should never happen.")
     }
 
+    console.log("text: ")
+    console.log(text)
+
     if (keys.length !== 0 && combinationState !== null) {
       if (keys[0] === "random") {
-        showText = randomText; 
+        showText = randomText === undefined || randomText === null || randomText === "" ? "Loading" : randomText; 
       } else {
-        showText = text[combinationState];
+        showText = text === undefined || text === null || text === "" ? "Loading" : text[combinationState];
       }
     }
 
