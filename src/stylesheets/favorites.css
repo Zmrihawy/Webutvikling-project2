@@ -19,9 +19,9 @@
     transition: all 0.4s ease 0s;
     cursor: pointer;
     position:relative;
-    left:50%;
+    left:60%;
     bottom:65px;
-    width: 50%;
+    width: 35%;
 
 }
 
@@ -40,7 +40,6 @@
     margin-top: 10px;
     position:relative;
     left:5%;
-
 
 }
 
@@ -95,7 +94,7 @@ input[type="text"] {
     border-radius: 3px;
     border: solid 1px black;
     height: 20px;
-    width: 150px;
+    width: 43%;
     padding:10px;
     position: relative;
     bottom: 10px;
