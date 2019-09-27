@@ -37,5 +37,6 @@
     "eslint": "^6.3.0",
     "eslint-plugin-react": "^7.14.3",
     "react-test-renderer": "^16.9.0"
-  }
+  },
+  "proxy": "http://it2810-30.idi.ntnu.no/"
 }
