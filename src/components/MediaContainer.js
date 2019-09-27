@@ -25,6 +25,7 @@ class MediaContainer extends Component {
 
     this.handleLeftChange = this.handleLeftChange.bind(this);
     this.handleRightChange = this.handleRightChange.bind(this);
+    this.handleGoToPrevCombChange = this.handleGoToPrevCombChange.bind(this);
   }
 
   getRandomInt(max) {
@@ -115,6 +116,18 @@ class MediaContainer extends Component {
         sounds: newSoundComb,
         text: newTextComb
       });
+
+      // Set the new combination in sessionStorage
+      // State should be updatet with new combinations at this point
+      let combs = JSON.parse(sessionStorage.getItem("combinations"));
+      let resArr = [];
+      if ( combs === null || combs === undefined || combs === []) {
+        resArr = [{state: globalState, combs: {picture: newPicComb, sounds: newSoundComb, text: newTextComb}}];
+      } else {
+        resArr.push(this.state);
+        resArr.push({state: globalState, combs: {picture: newPicComb, sounds: newSoundComb, text: newTextComb}});
+      }
+      sessionStorage.setItem("combinations", JSON.stringify(resArr));
     }
   }
 
@@ -131,6 +144,29 @@ class MediaContainer extends Component {
       currentIndex: currentIndex >= 3 ? 0 : currentIndex + 1
     });
   }
+  
+  handleGoToPrevCombChange() {
+
+    var combs = JSON.parse(sessionStorage.getItem("combinations"));
+    console.log(combs); 
+    if (combs !== null && combs !== undefined && combs.length >= 0) {
+      const { state, combs } = combs.pop();
+      this.setState({
+        picture: state.picture,
+        text : state.text,
+        sound : state.sound
+      });
+      this.setCombinations({
+        picture: combs.picture,
+        text: combs.text,
+        sounds: combs.sounds
+      });
+      sessionStorage.setItem("combinations", JSON.stringify(combs));
+    } else {
+      alert("No previous combination entry found")
+    }
+  }
+
 
   render() {
     const { globalState } = this.props;
@@ -177,6 +213,7 @@ class MediaContainer extends Component {
             combinationState={sound[currentIndex]}
           />
         </div>
+        <button className="prevCombButton" onClick={this.handleGoToPrevCombChange}> Go to prev combination </button>
       </div>
     );
   }
