@@ -60,13 +60,11 @@ class PictureDisplayContainer extends Component {
         default:
           console.log("Critical error! Picture state not recognized")
       }
-      console.log(imgArr[combinationState])
       fetch(imgArr[combinationState])
         .then(res => {
           return res.text();
         })
         .then(res => {
-          console.log(res);
           this.setState({pictureSrc: res})
         })
     }
