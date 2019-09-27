@@ -116,10 +116,10 @@ class MediaContainer extends Component {
     // values and set to favorite values
     if (chosenFavorite != null) {
       globalPicture = chosenFavorite.picture;
-      globalSound = chosenFavorite.sound;
+      globalSound = chosenFavorite.sounds;
       globalText = chosenFavorite.text;
       picture = chosenFavorite.combinations.picture;
-      sound = chosenFavorite.combinations.sound;
+      sound = chosenFavorite.combinations.sounds;
       text = chosenFavorite.combinations.text;
     }
 
