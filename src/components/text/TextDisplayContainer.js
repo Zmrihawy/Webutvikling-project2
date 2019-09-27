@@ -35,12 +35,8 @@ class TextDisplayContainer extends Component {
           URL = randomURL;
           break;
       }
-      console.log("fetching url");
-      console.log(URL);
       fetch(URL)
-        .then(res => {
-          console.log(res)
-          return res.json()})
+        .then(res => res.json())
         .then(res => {
             if (keys[0] === "random") {
               this.setState({randomText: res.phrase})
@@ -69,12 +65,8 @@ class TextDisplayContainer extends Component {
             URL = randomURL;
             break;
         }
-        console.log("fetching url");
-        console.log(URL);
         fetch(URL)
-          .then(res => {
-            console.log(res)
-            return res.json()})
+          .then(res => res.json())
           .then(res => {
             if (keys[0] === "random") {
               this.setState({randomText: res.phrase})
@@ -95,9 +87,6 @@ class TextDisplayContainer extends Component {
     if (keys.length > 1) {
       console.log("Critical error! Active text is more than one. This should never happen.")
     }
-
-    console.log("text: ")
-    console.log(text)
 
     if (keys.length !== 0 && combinationState !== null) {
       if (keys[0] === "random") {
