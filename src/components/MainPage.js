@@ -3,6 +3,7 @@ import Navbar from "./navbar/Navbar";
 import MediaContainer from "./MediaContainer";
 
 class MainPage extends Component {
+  // Initial state of the app is set here
   constructor(props) {
     super(props);
     this.state = {
@@ -45,8 +46,7 @@ class MainPage extends Component {
     this.setCombinations = this.setCombinations.bind(this);
   }
 
-  // Example:
-  // setPicture({Color: true})
+  // Callback functions for sending down the component tree
   setPicture(New) {
     this.setState({ picture: { ...this.state.picture, ...New } });
   }

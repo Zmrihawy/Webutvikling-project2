@@ -2,6 +2,11 @@ import React, { Component } from "react";
 
 import "../../stylesheets/favorites.css";
 
+/**
+ * Component for handling favorite functionality.
+ * Contains some complexity because it needs to use callbacks for 
+ * the global state, in addition to handle localStorage
+ */
 class Favourites extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +15,10 @@ class Favourites extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+
+  /** 
+   * Handle what happens when user presses the make favorite button
+   */
   handleMakeFavoriteChange() {
     const { favoriteName } = this.state;
     if (favoriteName === "") {
@@ -40,6 +49,9 @@ class Favourites extends Component {
     this.setState({ favoriteName: e.target.value });
   }
 
+  /**
+   * Handle what happens when user chooses a favorite to display
+   */
   handleChooseFavorite(name) {
     const { setFavourites } = this.props;
     if (name === "none") {

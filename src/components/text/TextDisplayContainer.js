@@ -6,16 +6,23 @@ const funnyURL = "media/txt/funny.json";
 const boringURL = "media/txt/boring.json";
 const randomURL = "https://corporatebs-generator.sameerkumar.website/";
 
+/**
+ * Component for handling and displaying text
+ */
 class TextDisplayContainer extends Component {
   constructor(props) {
     super(props);
-    // Need to seperate fields here since the form of the fetch response for them are different.
+    // Need to seperate fields here since the shape of the fetch response for them are different.
     this.state = {
       text: "",
       randomText: ""
     };
   }
 
+
+  /** 
+   * Check what category, and fetch text based on the associated URl
+   */
   componentDidMount() {
     const { textState } = this.props;
     let keys = Object.keys(textState).filter(key => textState[key]);
@@ -44,6 +51,9 @@ class TextDisplayContainer extends Component {
     }
   }
 
+  /** 
+   * Check what category, and fetch text based on the associated URl
+   */
   componentDidUpdate(prevProps) {
     const { textState, combinationState } = this.props;
     if (

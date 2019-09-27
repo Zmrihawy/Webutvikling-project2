@@ -17,6 +17,10 @@ let anim2 = "media/img/spirals/spiral_cat_2.svg";
 let anim3 = "media/img/spirals/spiral_cat_3.svg";
 let anim4 = "media/img/spirals/spiral_cat_4.svg";
 
+/**
+ * Component for displaying pictures. Fetches content dynamically
+ * using ajax.
+ */
 class PictureDisplayContainer extends Component {
   constructor(props) {
     super(props);
@@ -33,6 +37,10 @@ class PictureDisplayContainer extends Component {
     );
   }
 
+
+  /**
+   * Check if props have changed, then update image acordingly
+   */
   componentDidUpdate(prevProps) {
     const { pictureState, combinationState } = this.props;
 
@@ -42,6 +50,7 @@ class PictureDisplayContainer extends Component {
     ) {
       let imgArr = [];
       let str = "";
+      // Get the active category
       Object.keys(pictureState).forEach(key => {
         if (pictureState[key]) {
           str = key;
