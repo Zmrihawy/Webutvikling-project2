@@ -29,6 +29,9 @@ const PictureDisplayContainer = (props) => {
     }
   });
 
+
+   let random_list = [dec1, dec2, dec3, dec4, art1, art2, art3, art4, dec1, dec2, dec3, dec4];
+  let RandomNumber = Math.floor(Math.random() * 11);
   switch(str) {
     case "cubes":
       imgArr = [dec1, dec2, dec3, dec4];
@@ -39,13 +42,17 @@ const PictureDisplayContainer = (props) => {
     case "spirals":
       imgArr = [anim1, anim2, anim3, anim4];
       break;
+    case "":
+      imgArr = [random_list[RandomNumber], random_list[RandomNumber], random_list[RandomNumber], random_list[RandomNumber]];
+      break;
     default:
       console.log("Critical error! Picture state not recognized")
   }
 
     return (
         <div className="containerSlide">
-          <img src={imgArr[combinationState]} alt="Select a combination to start ..." className="image" />
+          <img src={imgArr[combinationState]}
+       alt="Select a combination to start ..." className="image" />
         </div>
     )
 };
