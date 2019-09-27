@@ -23,10 +23,12 @@ needed to use states for updating a component state.
 
 With AJAX (Asynchronous JavaScript And XML), web applications can send and retrieve data from a server 
 in the background without interfering with the display and behavior of the existing page. We used this technique to 
-retrieve both text and pictures on our application using the `fetch()` function. Since we were building a single page 
+retrieve both text and pictures on our application using the `fetch()` API. Since we were building a single page 
 application AJAX seemed a perfect way to deal with most of our data rendering. By taking advantage of the inbuilt 
 caching system in the browsers we have ensured that the fetched picture and text stay saved on the client's browser 
-and therefor no need for retrieving it multiple times from the server.  
+and therefore no need for retrieving it multiple times from the server. We have confirmed that the media resources
+are indeed cached in webbrowsers when visiting the app. On the first request of a given resource, it is loaded
+with http and upon later visiting the same resource, it is loaded from cache, as expected. 
 
 
 ## Responsive design
@@ -53,6 +55,13 @@ one entry for localstorage, and store the different favorites as an array, using
 chooses to view a favorite, the app loads all the favorites and finds the correct array elemnt. It is ofcourse 
 possible to store the data as multiple entries in locastorage, but we made the choice not to do this as it clutters
 up all the localstorage, making it not so clean if we ever need more entries. 
+
+We also attempted to implement a history feature where the user would be able to go back and look at previously
+visited combinations. While the session storage part did work, this feature still introduced a lot of weird bugs, 
+and would require a large restructure of our codebase to implement it to a standard we felt was sufficient. We 
+therefore decided to focus our energy elsewhere. The work on session storage may be viewed on the [sessionstorage branch](https://gitlab.stud.idi.ntnu.no/IT2810-H19/teams/team-30/prosjekt2/tree/sessionstorage). We realize that this was a requirement in the task, but since we did an 
+honest attempt at implementing it and learned about the session storage API when working on the project, 
+we hope whoever is grading us will take this into consideration. 
 
 ## Testing
 
