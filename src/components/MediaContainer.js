@@ -124,7 +124,6 @@ class MediaContainer extends Component {
       if ( combs === null || combs === undefined || combs === []) {
         resArr = [{state: globalState, combs: {picture: newPicComb, sounds: newSoundComb, text: newTextComb}}];
       } else {
-        resArr.push(this.state);
         resArr.push({state: globalState, combs: {picture: newPicComb, sounds: newSoundComb, text: newTextComb}});
       }
       sessionStorage.setItem("combinations", JSON.stringify(resArr));
@@ -147,9 +146,12 @@ class MediaContainer extends Component {
   
   handleGoToPrevCombChange() {
 
+    const { setCombinations } = this.props;
     let sessStorage = JSON.parse(sessionStorage.getItem("combinations"));
     console.log(sessStorage); 
-    if (sessStorage !== null && sessStorage !== undefined && sessStorage.length >= 0) {
+    console.log(sessStorage.length); 
+    if (sessStorage !== null && sessStorage !== undefined && sessStorage.length > 0) {
+      console.log("poping sess storage"); 
       const { state, combs } = sessStorage.pop();
       this.setState({
         picture: state.picture,
@@ -163,6 +165,7 @@ class MediaContainer extends Component {
       });
       sessionStorage.setItem("combinations", JSON.stringify(sessStorage));
     } else {
+      console.log("skipping sess storage"); 
       alert("No previous combination entry found")
     }
   }
