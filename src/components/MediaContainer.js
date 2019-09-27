@@ -156,7 +156,7 @@ class MediaContainer extends Component {
         text : state.text,
         sounds : state.sounds
       });
-      this.setCombinations({
+      setCombinations({
         picture: combs.picture,
         text: combs.text,
         sounds: combs.sounds
