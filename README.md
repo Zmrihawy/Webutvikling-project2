@@ -44,7 +44,7 @@ over flexbox since its easier for us to deal with although any could have worked
 We went for a single color background and used custom fonts to style up our text. We used one font for all heading and 
 one for the entire body text. We also used fontawesome library to style up the toggle buttons with simple arrow icons.
 Together this produced a simple and easy to use application. We have  also preferred to use a slider container for 
-navigating through the different combinations as an alternative to tabs. 
+navigating through the different combinations as an alternative to tabs cause we thought this was a better idea. 
 
 
 ## Webstorage
@@ -74,5 +74,5 @@ have to mock the non-deterministic elements of the component, something we decid
 
 ## Summary
 
-Our web application can be found [here](it2810-30.idi.ntnu.no/prosjekt2/index.html).
+Our web application can be found [here](https://it2810-30.idi.ntnu.no/prosjekt2/index.html).
 
