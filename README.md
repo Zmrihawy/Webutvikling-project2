@@ -78,5 +78,5 @@ nicely to different screen sizes.
 
 ## Summary
 
-Our web application can be found [here](https://it2810-30.idi.ntnu.no/prosjekt2/index.html).
+Our web application can be found [here](http://it2810-30.idi.ntnu.no/prosjekt2/index.html).
 
