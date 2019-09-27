@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import texts from '../../media/txt/texts.json';
+
 
 import TextDisplay from './TextDisplay';
+
+const funnyURL = 'it2810-30.idi.ntnu.no/media/txt/funny.json'
+const boringURL = 'it2810-30.idi.ntnu.no/media/txt/boring.json'
+const randomURL = 'https://corporatebs-generator.sameerkumar.website/'
 
 class TextDisplayContainer extends Component {
 
   constructor(props) {
     super(props);
+    // Need to seperate fields here since the form of the fetch response for them are different.
     this.state = {
+      text: "",
       randomText: ""
     }
   }
@@ -16,8 +22,20 @@ class TextDisplayContainer extends Component {
     const { textState } = this.props;  
     let keys = Object.keys(textState).filter(key => (
       textState[key]));
-    if (keys.length === 1 && keys[0] === "random") {
-      fetch("https://corporatebs-generator.sameerkumar.website/")
+    let URL = "";
+    if (keys.length === 1) {
+      switch(keys[0]) {
+        case "funny":
+          URL = funnyURL;
+          break;
+        case "boring": 
+          URL = boringURL;
+          break;
+        case "random":
+          URL = randomURL;
+          break;
+      }
+      fetch(URL)
         .then(res => res.json())
         .then(res => (this.setState({randomText: res.phrase})))
     }
@@ -26,21 +44,39 @@ class TextDisplayContainer extends Component {
   componentDidUpdate(prevProps) {
     const { textState, combinationState } = this.props;  
     if (prevProps.textState !== textState || prevProps.combinationState !== combinationState) {
-      let keys = Object.keys(textState).filter(key => (
+      const keys = Object.keys(textState).filter(key => (
         textState[key]));
-      if (keys.length === 1 && keys[0] === "random") {
-        fetch("https://corporatebs-generator.sameerkumar.website/")
+      let URL = "";
+      if (keys.length === 1) {
+        switch(keys[0]) {
+          case "funny":
+            URL = funnyURL;
+            break;
+          case "boring": 
+            URL = boringURL;
+            break;
+          case "random":
+            URL = randomURL;
+            break;
+        }
+        fetch(URL)
           .then(res => res.json())
-          .then(res => (this.setState({randomText: res.phrase})))
+          .then(res => {
+            if (keys[0] === "random") {
+              this.setState({randomText: res.phrase})
+            } else {
+              this.setState({text: res.phrase})
+            }
+          }) 
       }
     }
   }
 
   render() {
     const { textState, combinationState } = this.props;  
-    const { randomText } = this.state;
-    let text = "";
-    let keys = Object.keys(textState).filter(key => (
+    const { text, randomText } = this.state;
+    let showText = "";
+    const keys = Object.keys(textState).filter(key => (
       textState[key]));
     if (keys.length > 1) {
       console.log("Critical error! Active text is more than one. This should never happen.")
@@ -48,15 +84,15 @@ class TextDisplayContainer extends Component {
 
     if (keys.length !== 0 && combinationState !== null) {
       if (keys[0] === "random") {
-        text = randomText; 
+        showText = randomText; 
       } else {
-        text = texts[keys[0]][combinationState];
+        showText = text[combinationState];
       }
     }
 
     return (
     <div>
-      <TextDisplay text={text}/>
+      <TextDisplay text={showText}/>
     </div>
     )
   }
