@@ -5,10 +5,10 @@ import romance2 from "../../media/sound/romantic/Tears-Of-Joy.mp3";
 import romance3 from "../../media/sound/romantic/Fireside-Date.mp3";
 import romance4 from "../../media/sound/romantic/Tender-Love-David-Fesliyan.mp3";
 
-import deep1 from "../../media/sound/Deep/Deep-Horn.mp3";
-import deep2 from "../../media/sound/Deep/Deep-Wobble.mp3";
-import deep3 from "../../media/sound/Deep/Drop-Into-Deep-Long.mp3";
-import deep4 from "../../media/sound/Deep/Welcome-To-This-Podcast.mp3";
+import deep1 from "../../media/sound/deep/Deep-Horn.mp3";
+import deep2 from "../../media/sound/deep/Deep-Wobble.mp3";
+import deep3 from "../../media/sound/deep/Drop-Into-Deep-Long.mp3";
+import deep4 from "../../media/sound/deep/Welcome-To-This-Podcast.mp3";
 
 import wild1 from "../../media/sound/wild/Cowboy-Theme-Pavak.mp3";
 import wild2 from "../../media/sound/wild/Nature-Sounds-Birds.mp3";
@@ -35,7 +35,7 @@ class SoundPlayer extends Component {
     }
   }
 
-  componentDidMoune() {
+  componentDidMount() {
     this.player.play();
   }
 
@@ -49,7 +49,15 @@ class SoundPlayer extends Component {
     }
     if (filteredSoundState.length > 0) {
       this.player.src = sounds[filteredSoundState[0]][combinationState];
-      this.player.play();
+      this.player.play()
+          .then(x => {
+            console.log("playing")
+            console.log(x)
+          })
+          .catch(err => {
+            console.log("ERROR")
+            console.log(err)
+          })
     }
   }
 
