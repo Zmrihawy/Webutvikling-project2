@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import TextDisplay from "./TextDisplay";
 
-const funnyURL = "media/txt/funny.json";
-const boringURL = "media/txt/boring.json";
+const funnyURL = "media/txt/Funny.json";
+const boringURL = "media/txt/Boring.json";
 const randomURL = "https://corporatebs-generator.sameerkumar.website/";
 
 class TextDisplayContainer extends Component {

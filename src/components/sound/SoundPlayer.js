@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 
-import romance1 from "../../media/sound/romantic/2016-10-25_-_Lovers_-_David_Fesliyan.mp3";
-import romance2 from "../../media/sound/romantic/2018-07-02_-_Tears_of_Joy_-_David_Fesliyan.mp3";
-import romance3 from "../../media/sound/romantic/2019-05-10_-_Fireside_Date_-_www.fesliyanstudios.com.mp3";
-import romance4 from "../../media/sound/romantic/RomanticMusic2018-11-11_-_Tender_Love_-_David_Fesliyan.mp3";
+import romance1 from "../../media/sound/romantic/Lovers-David-Fesliyan.mp3";
+import romance2 from "../../media/sound/romantic/Tears-Of-Joy.mp3";
+import romance3 from "../../media/sound/romantic/Fireside-Date.mp3";
+import romance4 from "../../media/sound/romantic/Tender-Love-David-Fesliyan.mp3";
 
-import deep1 from "../../media/sound/Deep/deep-horn.mp3";
-import deep2 from "../../media/sound/Deep/deep-wobble.mp3";
-import deep3 from "../../media/sound/Deep/drop-into-deep-long.mp3";
-import deep4 from "../../media/sound/Deep/welcome-to-this-podcast.mp3";
+import deep1 from "../../media/sound/Deep/Deep-Horn.mp3";
+import deep2 from "../../media/sound/Deep/Deep-Wobble.mp3";
+import deep3 from "../../media/sound/Deep/Drop-Into-Deep-Long.mp3";
+import deep4 from "../../media/sound/Deep/Welcome-To-This-Podcast.mp3";
 
-import wild1 from "../../media/sound/wild/Cowboy_Theme-Pavak-1711860633.mp3";
-import wild2 from "../../media/sound/wild/Nature-sounds-birds.mp3";
-import wild3 from "../../media/sound/wild/Night_Sounds_-_Crickets-Lisa_Redfern-591005346.mp3";
-import wild4 from "../../media/sound/wild/thunder_strike_3-Mike_Koenig-853886140.mp3";
+import wild1 from "../../media/sound/wild/Cowboy-Theme-Pavak.mp3";
+import wild2 from "../../media/sound/wild/Nature-Sounds-Birds.mp3";
+import wild3 from "../../media/sound/wild/Night-Sounds-Crickets.mp3";
+import wild4 from "../../media/sound/wild/Thunder-Strike.mp3";
 
 const sounds = {
   romance: [romance1, romance2, romance3, romance4],

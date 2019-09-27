@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import PictureDisplayContainer from "./picture/PictureDisplayContainer";
+import PictureDisplay from "./picture/PictureDisplay";
 import TextDisplayContainer from "./text/TextDisplayContainer";
 import SoundPlayer from "./sound/SoundPlayer";
 
-import "../stylesheets/mediacontainer.css";
+import "../stylesheets/media-container.css";
 
 class MediaContainer extends Component {
   constructor(props) {
@@ -160,7 +160,7 @@ class MediaContainer extends Component {
           <i className="fas fa-angle-right" />
         </button>
         <div className="Slideshow">
-          <PictureDisplayContainer
+          <PictureDisplay
             pictureState={globalPicture}
             combinationState={picture[currentIndex]}
           />

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../../stylesheets/Slide.css";
+import "../../stylesheets/slide.css";
 
 let dec1 = "media/img/cubes/cubes_1.svg";
 let dec2 = "media/img/cubes/cubes_2.svg";
@@ -17,7 +17,7 @@ let anim2 = "media/img/spirals/spiral_cat_2.svg";
 let anim3 = "media/img/spirals/spiral_cat_3.svg";
 let anim4 = "media/img/spirals/spiral_cat_4.svg";
 
-class PictureDisplayContainer extends Component {
+class PictureDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -95,4 +95,4 @@ class PictureDisplayContainer extends Component {
   }
 }
 
-export default PictureDisplayContainer;
+export default PictureDisplay;
